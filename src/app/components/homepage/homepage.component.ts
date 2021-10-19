@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+ data:any={}
+ firstname:any ={}
+  constructor(private bio:UserService) { }
 
   ngOnInit() {
+    this.firstname=this.bio.fg
+    /*this.bio.getData().subscribe(
+      (resp:any)=>{
+        this.data=resp
+      },
+      ()=>{}
+    )*/
   }
 
 }

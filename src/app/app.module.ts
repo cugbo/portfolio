@@ -7,9 +7,11 @@ import { AboutmeComponent } from './components/aboutme/aboutme.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UserService } from './components/user.service';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     FooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
