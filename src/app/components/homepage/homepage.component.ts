@@ -9,17 +9,17 @@ import { UserService } from '../user.service';
 export class HomepageComponent implements OnInit {
 
  data:any={}
- firstname:any ={}
+
   constructor(private bio:UserService) { }
 
   ngOnInit() {
-    this.firstname=this.bio.fg
-    /*this.bio.getData().subscribe(
+    
+    this.bio.getData().subscribe(
       (resp:any)=>{
         this.data=resp
       },
       ()=>{}
-    )*/
+    )
   }
 
 }

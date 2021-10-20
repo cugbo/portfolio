@@ -5,11 +5,11 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
-  fg:any={};
+ 
   constructor(private http: HttpClient) { }
 
-  getData():any{
+  getData(){
     let url:string = "http://portfolio-dotnet.herokuapp.com/api/v1/biodata/2"
-    this.http.get(url).subscribe((resp:any)=>{this.fg=resp;})
+    return this.http.get(url);
   }
 }
